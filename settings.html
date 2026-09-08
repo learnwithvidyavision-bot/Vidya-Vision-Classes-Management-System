@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Settings | Vidya Vision Classes</title>
+
+
+    <!-- Google Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- Settings CSS -->
+
+    <link
+        rel="stylesheet"
+        href="css/settings.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         LOADER
+         ================================================== -->
+
+    <div id="loader">
+
+        <div class="loader-box">
+
+            <div class="loader-logo">
+                VVC
+            </div>
+
+            <h2>
+                Vidya Vision Classes
+            </h2>
+
+            <p>
+                Loading Settings...
+            </p>
+
+            <div class="loading-bar">
+
+                <div class="loading-progress"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         DASHBOARD LAYOUT
+         ================================================== -->
+
+    <div class="dashboard">
+
+
+        <!-- ==================================================
+             SIDEBAR
+             ================================================== -->
+
+        <aside class="sidebar">
+
+
+            <!-- SIDEBAR LOGO -->
+
+            <div class="sidebar-top">
+
+                <div class="logo">
+
+                    <div class="logo-circle">
+                        VVC
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Vidya Vision
+                        </h2>
+
+                        <p>
+                            Teacher Portal
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NAVIGATION -->
+
+            <nav>
+
+                <ul>
+
+
+                    <li>
+
+                        <a href="dashboard.html">
+
+                            <i class="fa-solid fa-house"></i>
+
+                            <span>
+                                Dashboard
+                            </span>
+
+                        </a>
+
+                    </li>
+
+
+
+                    <li>
+
+                        <a href="students.html">
+
+                            <i class="fa-solid fa-user-graduate"></i>
+
+                            <span>
+                                Students
+                            </span>
+
+                        </a>
+
+                    </li>
+
+
+
+                    <li>
+
+                        <a href="attendance.html">
+
+                            <i class="fa-solid fa-calendar-check"></i>
+
+                            <span>
+                                Attendance
+                            </span>
+
+                        </a>
+
+                    </li>
+
+
+
+                    <li>
+
+                        <a href="notes.html">
+
+                            <i class="fa-solid fa-book-open"></i>
+
+                            <span>
+                                Notes
+                            </span>
+
+                        </a>
+
+                    </li>
+
+
+
+                    <li>
+
+                        <a href="tests.html">
+
+                            <i class="fa-solid fa-file-pen"></i>
+
+                            <span>
+                                Tests
+                            </span>
+
+                        </a>
+
+                    </li>
+
+
+
+                    <li>
+
+                        <a href="results.html">
+
+                            <i class="fa-solid fa-chart-line"></i>
+
+                            <span>
+                                Results
+                            </span>
+
+                        </a>
+
+                    </li>
+
+
+
+                    <li>
+
+                        <a href="parents.html">
+
+                            <i class="fa-solid fa-users"></i>
+
+                            <span>
+                                Parents
+                            </span>
+
+                        </a>
+
+                    </li>
+
+
+
+                    <li class="active">
+
+                        <a href="settings.html">
+
+                            <i class="fa-solid fa-gear"></i>
+
+                            <span>
+                                Settings
+                            </span>
+
+                        </a>
+
+                    </li>
+
+
+                </ul>
+
+            </nav>
+
+
+        </aside>
+
+
+
+        <!-- ==================================================
+             MAIN CONTENT
+             ================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- TOPBAR -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <h1>
+                        Settings
+                    </h1>
+
+                    <p>
+                        Manage your profile and app preferences.
+                    </p>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- ==================================================
+                 SETTINGS GRID
+                 ================================================== -->
+
+            <section class="settings-grid">
+
+
+
+                <!-- ==================================================
+                     PROFILE PANEL
+                     ================================================== -->
+
+                <div class="panel">
+
+
+                    <div class="panel-header">
+
+                        <h2>
+
+                            <i class="fa-solid fa-user"></i>
+
+                            Profile
+
+                        </h2>
+
+                        <p>
+                            Manage the information displayed across your portal.
+                        </p>
+
+                    </div>
+
+
+
+                    <form id="profileForm">
+
+
+                        <!-- DISPLAY NAME -->
+
+                        <div class="input-group">
+
+                            <label for="teacherName">
+                                Display Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="teacherName"
+                                placeholder="Himanshu Gupta"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- ROLE -->
+
+                        <div class="input-group">
+
+                            <label for="teacherRole">
+                                Role / Title
+                            </label>
+
+                            <input
+                                type="text"
+                                id="teacherRole"
+                                placeholder="Founder"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- INSTITUTE -->
+
+                        <div class="input-group">
+
+                            <label for="instituteName">
+                                Institute Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="instituteName"
+                                placeholder="Vidya Vision Classes"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- SAVE -->
+
+                        <button
+                            type="submit"
+                            class="save-btn"
+                        >
+
+                            <i class="fa-solid fa-floppy-disk"></i>
+
+                            Save Profile
+
+                        </button>
+
+
+                    </form>
+
+
+                </div>
+
+
+
+                <!-- ==================================================
+                     LOGIN CREDENTIALS PANEL
+                     ================================================== -->
+
+                <div class="panel">
+
+
+                    <div class="panel-header">
+
+                        <h2>
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            Login Credentials
+
+                        </h2>
+
+                        <p>
+                            Change the username or password used to access the portal.
+                        </p>
+
+                    </div>
+
+
+
+                    <form id="credentialsForm">
+
+
+                        <!-- USERNAME -->
+
+                        <div class="input-group">
+
+                            <label for="newUsername">
+                                New Username
+                            </label>
+
+                            <input
+                                type="text"
+                                id="newUsername"
+                                placeholder="Enter new username"
+                                autocomplete="username"
+                            >
+
+                        </div>
+
+
+
+                        <!-- PASSWORD -->
+
+                        <div class="input-group">
+
+                            <label for="newPassword">
+                                New Password
+                            </label>
+
+
+                            <div class="password-wrapper">
+
+                                <input
+                                    type="password"
+                                    id="newPassword"
+                                    placeholder="Enter new password"
+                                    autocomplete="new-password"
+                                >
+
+                                <button
+                                    type="button"
+                                    id="togglePassword"
+                                    class="password-toggle"
+                                    aria-label="Show password"
+                                >
+
+                                    <i class="fa-solid fa-eye"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <p class="hint">
+
+                            Leave both fields blank to keep the current credentials unchanged.
+
+                        </p>
+
+
+
+                        <!-- UPDATE -->
+
+                        <button
+                            type="submit"
+                            class="save-btn"
+                        >
+
+                            <i class="fa-solid fa-key"></i>
+
+                            Update Credentials
+
+                        </button>
+
+
+                    </form>
+
+
+                </div>
+
+
+
+                <!-- ==================================================
+                     APPEARANCE PANEL
+                     ================================================== -->
+
+                <div class="panel">
+
+
+                    <div class="panel-header">
+
+                        <h2>
+
+                            <i class="fa-solid fa-palette"></i>
+
+                            Appearance
+
+                        </h2>
+
+                        <p>
+                            Customize how the VVCMS portal looks on this device.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="toggle-row">
+
+
+                        <div>
+
+                            <h4>
+                                Dark Mode
+                            </h4>
+
+                            <p>
+                                Switch the dashboard to a darker color scheme.
+                            </p>
+
+                        </div>
+
+
+
+                        <label class="switch">
+
+                            <input
+                                type="checkbox"
+                                id="darkModeToggle"
+                            >
+
+                            <span class="slider"></span>
+
+                        </label>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- ==================================================
+                     PORTAL INFORMATION PANEL
+                     ================================================== -->
+
+                <div class="panel">
+
+
+                    <div class="panel-header">
+
+                        <h2>
+
+                            <i class="fa-solid fa-circle-info"></i>
+
+                            Portal Information
+
+                        </h2>
+
+                        <p>
+                            Basic information about your VVCMS portal.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="info-list">
+
+
+                        <div class="info-item">
+
+                            <span>
+                                Portal Name
+                            </span>
+
+                            <strong>
+                                VVCMS
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="info-item">
+
+                            <span>
+                                Full Name
+                            </span>
+
+                            <strong>
+                                Vidya Vision Classes Management System
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="info-item">
+
+                            <span>
+                                Portal Type
+                            </span>
+
+                            <strong>
+                                Teacher Portal
+                            </strong>
+
+                        </div>
+
+
+
+                        <div class="info-item">
+
+                            <span>
+                                Version
+                            </span>
+
+                            <strong>
+                                1.0
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- ==================================================
+                     DANGER ZONE
+                     ================================================== -->
+
+                <div class="panel danger-panel">
+
+
+                    <div class="panel-header">
+
+                        <h2>
+
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+
+                            Danger Zone
+
+                        </h2>
+
+                        <p>
+                            These actions permanently affect data stored on this device.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="danger-content">
+
+
+                        <div>
+
+                            <h4>
+                                Clear All Data
+                            </h4>
+
+                            <p>
+                                Permanently delete all students, attendance, notes, tests, results, and parent records stored on this device.
+                            </p>
+
+                        </div>
+
+
+
+                        <button
+                            id="clearDataBtn"
+                            class="danger-btn"
+                            type="button"
+                        >
+
+                            <i class="fa-solid fa-trash"></i>
+
+                            Clear All Data
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- FOOTER -->
+
+            <footer class="footer">
+
+                <p>
+                    © 2026 Vidya Vision Classes. All rights reserved.
+                </p>
+
+            </footer>
+
+
+        </main>
+
+
+    </div>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="js/vvc-core.js"></script>
+
+    <script src="js/settings.js"></script>
+
+
+</body>
+
+</html>

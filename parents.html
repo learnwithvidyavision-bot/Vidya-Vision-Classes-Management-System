@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Parents | Vidya Vision Classes</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="css/parents.css">
+</head>
+
+<body>
+
+    <!-- LOADER -->
+    <div id="loader">
+        <div class="loader-box">
+            <div class="loader-logo">VVC</div>
+            <h2>Vidya Vision Classes</h2>
+            <p>Loading Parents...</p>
+
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- MAIN DASHBOARD -->
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="sidebar-top">
+
+                <div class="logo">
+                    <div class="logo-circle">VVC</div>
+
+                    <div>
+                        <h2>Vidya Vision</h2>
+                        <p>Teacher Portal</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <nav>
+                <ul>
+
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fa-solid fa-house"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="students.html">
+                            <i class="fa-solid fa-user-graduate"></i>
+                            <span>Students</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="attendance.html">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            <span>Attendance</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="notes.html">
+                            <i class="fa-solid fa-book-open"></i>
+                            <span>Notes</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="tests.html">
+                            <i class="fa-solid fa-file-pen"></i>
+                            <span>Tests</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="results.html">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span>Results</span>
+                        </a>
+                    </li>
+
+                    <li class="active">
+                        <a href="parents.html">
+                            <i class="fa-solid fa-users"></i>
+                            <span>Parents</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="settings.html">
+                            <i class="fa-solid fa-gear"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <div class="topbar-title">
+                    <h1>Parents</h1>
+                    <p>Manage parent and guardian contact details.</p>
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <button
+                        class="notification-btn"
+                        type="button"
+                        aria-label="Notifications"
+                    >
+                        <i class="fa-solid fa-bell"></i>
+                    </button>
+
+
+                    <div class="teacher-profile">
+
+                        <div class="profile-image">
+                            VVC
+                        </div>
+
+                        <div>
+                            <h4>Himanshu Gupta</h4>
+                            <small>Founder</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- SUMMARY CARDS -->
+            <section class="summary-grid">
+
+                <div class="summary-card">
+
+                    <div>
+                        <h2 id="totalParents">0</h2>
+                        <p>Total Parents</p>
+                    </div>
+
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div>
+                        <h2 id="totalFathers">0</h2>
+                        <p>Fathers</p>
+                    </div>
+
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-person"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div>
+                        <h2 id="totalMothers">0</h2>
+                        <p>Mothers</p>
+                    </div>
+
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-person-dress"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div>
+                        <h2 id="totalGuardians">0</h2>
+                        <p>Guardians</p>
+                    </div>
+
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- PARENTS HEADER -->
+            <section class="parents-header">
+
+                <div>
+                    <h2>Parent & Guardian Contacts</h2>
+
+                    <p>
+                        Manage communication details for every student's parent or guardian.
+                    </p>
+                </div>
+
+
+                <button
+                    id="addParentBtn"
+                    type="button"
+                >
+                    <i class="fa-solid fa-plus"></i>
+                    Add Parent / Guardian
+                </button>
+
+            </section>
+
+
+            <!-- FILTER BAR -->
+            <section class="filter-bar">
+
+
+                <!-- SEARCH -->
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="searchParents"
+                        placeholder="Search parent, student, phone..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <!-- RELATION FILTER -->
+                <select id="relationFilter">
+
+                    <option value="all">All Relations</option>
+
+                    <option value="Father">Father</option>
+
+                    <option value="Mother">Mother</option>
+
+                    <option value="Guardian">Guardian</option>
+
+                </select>
+
+
+                <!-- CLASS FILTER -->
+                <select id="classFilter">
+
+                    <option value="all">All Classes</option>
+
+                    <option value="Class 9">Class 9</option>
+
+                    <option value="Class 10">Class 10</option>
+
+                    <option value="Class 11">Class 11</option>
+
+                    <option value="Class 12">Class 12</option>
+
+                </select>
+
+
+            </section>
+
+
+            <!-- PARENTS TABLE -->
+            <section class="table-container">
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Parent Name</th>
+
+                                <th>Student</th>
+
+                                <th>Class</th>
+
+                                <th>Relation</th>
+
+                                <th>Phone</th>
+
+                                <th>Email</th>
+
+                                <th>Actions</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="parentBody">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- EMPTY STATE -->
+            <section
+                class="empty-state"
+                id="emptyState"
+            >
+
+                <div class="empty-icon">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <h2>No Parent Contacts Yet</h2>
+
+                <p>
+                    Add parent or guardian information to keep communication organized and connected with every student.
+                </p>
+
+                <button
+                    id="emptyAddParentBtn"
+                    type="button"
+                >
+                    <i class="fa-solid fa-plus"></i>
+                    Add Parent Contact
+                </button>
+
+            </section>
+
+
+            <!-- ADD PARENT MODAL -->
+            <div
+                class="modal"
+                id="parentModal"
+            >
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+
+                        <div>
+                            <h2>Add Parent / Guardian</h2>
+                            <p>Add a parent or guardian contact for a student.</p>
+                        </div>
+
+                        <button
+                            id="closeModal"
+                            type="button"
+                            aria-label="Close modal"
+                        >
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+
+                    </div>
+
+
+                    <form id="parentForm">
+
+                        <div class="form-grid">
+
+
+                            <!-- PARENT NAME -->
+                            <div class="input-group">
+
+                                <label for="parentName">
+                                    Parent / Guardian Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="parentName"
+                                    placeholder="Enter name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- STUDENT -->
+                            <div class="input-group">
+
+                                <label for="parentStudent">
+                                    Student
+                                </label>
+
+                                <select
+                                    id="parentStudent"
+                                    required
+                                >
+                                </select>
+
+                            </div>
+
+
+                            <!-- RELATION -->
+                            <div class="input-group">
+
+                                <label for="parentRelation">
+                                    Relation
+                                </label>
+
+                                <select id="parentRelation">
+
+                                    <option value="Father">
+                                        Father
+                                    </option>
+
+                                    <option value="Mother">
+                                        Mother
+                                    </option>
+
+                                    <option value="Guardian">
+                                        Guardian
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- PHONE -->
+                            <div class="input-group">
+
+                                <label for="parentPhone">
+                                    Phone Number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="parentPhone"
+                                    placeholder="9876543210"
+                                    maxlength="10"
+                                    pattern="[0-9]{10}"
+                                    inputmode="numeric"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- EMAIL -->
+                            <div class="input-group full">
+
+                                <label for="parentEmail">
+                                    Email (optional)
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="parentEmail"
+                                    placeholder="parent@email.com"
+                                >
+
+                            </div>
+
+
+                        </div>
+
+
+                        <!-- SAVE BUTTON -->
+                        <button
+                            type="submit"
+                            class="save-btn"
+                        >
+
+                            <i class="fa-solid fa-floppy-disk"></i>
+
+                            Save Parent Contact
+
+                        </button>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOTER -->
+            <footer class="footer">
+
+                <p>
+                    © 2026 Vidya Vision Classes. All rights reserved.
+                </p>
+
+            </footer>
+
+
+        </main>
+
+    </div>
+
+
+    <script src="js/vvc-core.js"></script>
+    <script src="js/parents.js"></script>
+
+</body>
+</html>

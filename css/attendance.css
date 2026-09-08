@@ -1,0 +1,1321 @@
+/*==================================================
+                VVCMS ATTENDANCE.CSS
+          Vidya Vision Classes
+==================================================*/
+
+/*==================================================
+                GOOGLE FONT
+==================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*==================================================
+                ROOT VARIABLES
+==================================================*/
+
+:root{
+
+    --primary:#2563EB;
+
+    --primary-dark:#1D4ED8;
+
+    --secondary:#38BDF8;
+
+    --success:#22C55E;
+
+    --danger:#EF4444;
+
+    --warning:#F59E0B;
+
+    --background:#F1F5F9;
+
+    --card:#FFFFFF;
+
+    --text:#0F172A;
+
+    --text-light:#64748B;
+
+    --border:#E2E8F0;
+
+    --shadow:0 10px 30px rgba(15,23,42,.08);
+
+    --radius:20px;
+
+    --transition:.35s ease;
+
+}
+
+/*==================================================
+                RESET
+==================================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    background:var(--background);
+
+    color:var(--text);
+
+}
+
+/*==================================================
+                LOADER
+==================================================*/
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+    transition:.5s;
+
+}
+
+.loader-box{
+
+    text-align:center;
+
+}
+
+.loader-logo{
+
+    width:90px;
+
+    height:90px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+
+    color:white;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.loading-bar{
+
+    width:250px;
+
+    height:8px;
+
+    margin:20px auto 0;
+
+    background:#E5E7EB;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+.loading-progress{
+
+    width:0;
+
+    height:100%;
+
+    display:block;
+
+    border-radius:50px;
+
+    background:linear-gradient(90deg,var(--primary),var(--secondary));
+
+    animation:loading 2s linear forwards;
+
+}
+
+@keyframes loading{
+
+    to{
+
+        width:100%;
+
+    }
+
+}
+
+/*==================================================
+                LAYOUT
+==================================================*/
+
+.dashboard{
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+
+.main-content{
+
+    flex:1;
+
+    margin-left:280px;
+
+    padding:35px;
+
+}
+
+/*==================================================
+                SIDEBAR
+==================================================*/
+
+.sidebar{
+
+    width:280px;
+
+    background:white;
+
+    box-shadow:var(--shadow);
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    bottom:0;
+
+    padding:30px;
+
+}
+
+.sidebar-top{
+
+    margin-bottom:40px;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.logo-circle{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:700;
+
+}
+
+.logo h2{
+
+    font-size:22px;
+
+}
+
+.logo p{
+
+    font-size:14px;
+
+    color:var(--text-light);
+
+}
+
+.sidebar nav ul{
+
+    list-style:none;
+
+}
+
+.sidebar nav li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:16px 18px;
+
+    margin-bottom:10px;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.sidebar nav li:hover{
+
+    background:#EFF6FF;
+
+    color:var(--primary);
+
+}
+
+.sidebar nav li.active{
+
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+
+    color:white;
+
+}
+
+.sidebar nav li a{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+/* Prevent browser link colors */
+
+.sidebar nav li a,
+.sidebar nav li a:visited,
+.sidebar nav li a:hover,
+.sidebar nav li a:active{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    width:100%;
+
+    color:inherit !important;
+
+    text-decoration:none;
+
+}
+
+.sidebar nav li.active a{
+
+    color:white !important;
+
+}
+/*==================================================
+                TOP BAR
+==================================================*/
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+
+.topbar h1{
+
+    font-size:32px;
+
+    font-weight:700;
+
+}
+
+.topbar p{
+
+    color:var(--text-light);
+
+    margin-top:6px;
+
+}
+
+.topbar-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+/*==================================================
+                SEARCH BOX
+==================================================*/
+
+.search-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    background:white;
+
+    padding:12px 18px;
+
+    border-radius:50px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.search-box i{
+
+    color:var(--text-light);
+
+}
+
+.search-box input{
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    width:220px;
+
+    font-size:15px;
+
+}
+
+/*==================================================
+                NOTIFICATION
+==================================================*/
+
+.notification-btn{
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:white;
+
+    cursor:pointer;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.notification-btn:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+/*==================================================
+                PROFILE
+==================================================*/
+
+.teacher-profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    background:white;
+
+    padding:10px 18px;
+
+    border-radius:50px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.profile-image{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-weight:700;
+
+}
+
+.teacher-profile small{
+
+    color:var(--text-light);
+
+}
+
+/*==================================================
+                PAGE HEADER
+==================================================*/
+
+.attendance-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.attendance-header h2{
+
+    font-size:28px;
+
+}
+
+.attendance-header p{
+
+    color:var(--text-light);
+
+    margin-top:5px;
+
+}
+
+/*==================================================
+                SAVE BUTTON
+==================================================*/
+
+#saveAttendanceBtn{
+
+    border:none;
+
+    padding:15px 28px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    box-shadow:0 12px 25px rgba(37,99,235,.25);
+
+    transition:var(--transition);
+
+}
+
+#saveAttendanceBtn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 18px 35px rgba(37,99,235,.35);
+
+}
+
+/*==================================================
+                SUMMARY CARDS
+==================================================*/
+
+.summary-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+    margin-bottom:35px;
+
+}
+
+.summary-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:28px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.summary-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.summary-card i{
+
+    font-size:34px;
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+}
+
+.summary-card h2{
+
+    font-size:34px;
+
+    margin-bottom:8px;
+
+}
+
+.summary-card p{
+
+    color:var(--text-light);
+
+}
+
+/*==================================================
+                ATTENDANCE TABLE
+==================================================*/
+
+.table-container{
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    margin-bottom:35px;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+thead{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:white;
+
+}
+
+thead th{
+
+    padding:18px;
+
+    text-align:left;
+
+    font-weight:600;
+
+}
+
+tbody td{
+
+    padding:18px;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+tbody tr{
+
+    transition:var(--transition);
+
+}
+
+tbody tr:hover{
+
+    background:#F8FAFC;
+
+}
+/*==================================================
+                STUDENT AVATAR
+==================================================*/
+
+.student-avatar{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:white;
+
+    font-weight:700;
+
+    font-size:16px;
+
+}
+
+/*==================================================
+                ATTENDANCE BUTTONS
+==================================================*/
+
+.attendance-actions{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.present-btn,
+.absent-btn{
+
+    border:none;
+
+    padding:10px 18px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.present-btn{
+
+    background:#DCFCE7;
+
+    color:#15803D;
+
+}
+
+.present-btn:hover{
+
+    background:#22C55E;
+
+    color:white;
+
+}
+
+.present-btn.active{
+
+    background:#16A34A;
+
+    color:white;
+
+}
+
+.absent-btn{
+
+    background:#FEE2E2;
+
+    color:#DC2626;
+
+}
+
+.absent-btn:hover{
+
+    background:#EF4444;
+
+    color:white;
+
+}
+
+.absent-btn.active{
+
+    background:#DC2626;
+
+    color:white;
+
+}
+
+/*==================================================
+                EMPTY STATE
+==================================================*/
+
+.empty-state{
+
+    display:none;
+
+    background:white;
+
+    padding:60px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    margin-bottom:35px;
+
+}
+
+.empty-icon{
+
+    width:100px;
+
+    height:100px;
+
+    border-radius:50%;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#EFF6FF;
+
+    margin-bottom:25px;
+
+}
+
+.empty-icon i{
+
+    font-size:42px;
+
+    color:var(--primary);
+
+}
+
+.empty-state h2{
+
+    margin-bottom:10px;
+
+}
+
+.empty-state p{
+
+    color:var(--text-light);
+
+    margin-bottom:25px;
+
+}
+
+.go-students-btn{
+
+    border:none;
+
+    padding:15px 28px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-weight:600;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    transition:var(--transition);
+
+}
+
+.go-students-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/*==================================================
+                REPORT SECTION
+==================================================*/
+
+.report-section{
+
+    margin-top:35px;
+
+}
+
+.report-section h2{
+
+    margin-bottom:20px;
+
+}
+
+.report-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+.report-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:28px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.report-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.report-card i{
+
+    font-size:32px;
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+}
+
+.report-card h3{
+
+    font-size:28px;
+
+    margin-bottom:8px;
+
+}
+
+.report-card p{
+
+    color:var(--text-light);
+
+}
+
+/*==================================================
+                FOOTER
+==================================================*/
+
+.footer{
+
+    margin-top:50px;
+
+    padding:30px 0;
+
+    text-align:center;
+
+    color:var(--text-light);
+
+}
+
+/*==================================================
+                RESPONSIVE
+==================================================*/
+
+@media(max-width:1100px){
+
+    .summary-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .report-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:992px){
+
+    .sidebar{
+
+        display:none;
+
+    }
+
+    .main-content{
+
+        margin-left:0;
+
+    }
+
+    .topbar{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
+
+    }
+
+    .attendance-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .summary-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .report-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .topbar-right{
+
+        flex-direction:column;
+
+        width:100%;
+
+    }
+
+    .search-box{
+
+        width:100%;
+
+    }
+
+    .search-box input{
+
+        width:100%;
+
+    }
+
+    .attendance-actions{
+
+        flex-direction:column;
+
+    }
+
+    .table-container{
+
+        overflow-x:auto;
+
+    }
+
+}
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode {
+    --background: #0F172A;
+    --text: #F8FAFC;
+    --text-light: #94A3B8;
+    --border: #334155;
+
+    background: var(--background);
+    color: var(--text);
+}
+
+
+/* Sidebar */
+
+body.dark-mode .sidebar {
+    background: #1E293B;
+    color: #F8FAFC;
+}
+
+
+/* Logo text */
+
+body.dark-mode .logo h2 {
+    color: #F8FAFC;
+}
+
+body.dark-mode .logo p {
+    color: #94A3B8;
+}
+
+
+/* Sidebar navigation */
+
+body.dark-mode .sidebar nav li:hover {
+    background: #334155;
+    color: #38BDF8;
+}
+
+body.dark-mode .sidebar nav li.active {
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color: white;
+}
+
+
+/* Main content */
+
+body.dark-mode .main-content {
+    color: #F8FAFC;
+}
+
+
+/* Search */
+
+body.dark-mode .search-box {
+    background: #1E293B;
+}
+
+body.dark-mode .search-box input {
+    color: #F8FAFC;
+}
+
+body.dark-mode .search-box input::placeholder {
+    color: #94A3B8;
+}
+
+
+/* Notification */
+
+body.dark-mode .notification-btn {
+    background: #1E293B;
+    color: #F8FAFC;
+}
+
+
+/* Teacher profile */
+
+body.dark-mode .teacher-profile {
+    background: #1E293B;
+}
+
+body.dark-mode .teacher-profile h4 {
+    color: #F8FAFC;
+}
+
+body.dark-mode .teacher-profile small {
+    color: #94A3B8;
+}
+
+
+/* Attendance header */
+
+body.dark-mode .attendance-header {
+    background: #1E293B;
+}
+
+body.dark-mode .attendance-header h2 {
+    color: #F8FAFC;
+}
+
+body.dark-mode .attendance-header p {
+    color: #94A3B8;
+}
+
+
+/* Summary cards */
+
+body.dark-mode .summary-card {
+    background: #1E293B;
+}
+
+body.dark-mode .summary-card h2 {
+    color: #F8FAFC;
+}
+
+body.dark-mode .summary-card p {
+    color: #94A3B8;
+}
+
+
+/* Attendance table */
+
+body.dark-mode .table-container {
+    background: #1E293B;
+}
+
+body.dark-mode tbody td {
+    color: #F8FAFC;
+    border-bottom-color: #334155;
+}
+
+body.dark-mode tbody tr:hover {
+    background: #273449;
+}
+
+
+/* Empty state */
+
+body.dark-mode .empty-state {
+    background: #1E293B;
+}
+
+body.dark-mode .empty-state h2 {
+    color: #F8FAFC;
+}
+
+body.dark-mode .empty-state p {
+    color: #94A3B8;
+}
+
+
+/* Footer */
+
+body.dark-mode .footer {
+    color: #94A3B8;
+}
+
+
+/* Save button */
+
+body.dark-mode #saveAttendanceBtn {
+    color: white;
+}
+
+
+/* Smooth transition */
+
+body,
+.sidebar,
+.search-box,
+.notification-btn,
+.teacher-profile,
+.attendance-header,
+.summary-card,
+.table-container,
+.empty-state,
+tbody tr {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}

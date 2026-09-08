@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance | Vidya Vision Classes</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="css/attendance.css">
+
+</head>
+
+<body>
+
+<!-- ==========================================
+            LOADING SCREEN
+=========================================== -->
+
+<div id="loader">
+
+    <div class="loader-box">
+
+        <div class="loader-logo">
+
+            VVC
+
+        </div>
+
+        <h1>
+
+            Attendance Module
+
+        </h1>
+
+        <h2>
+
+            Loading...
+
+        </h2>
+
+        <div class="loading-bar">
+
+            <div class="loading-progress"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+            DASHBOARD
+=========================================== -->
+
+<div class="dashboard">
+
+<!-- ==========================================
+            SIDEBAR
+=========================================== -->
+
+<aside class="sidebar">
+
+    <div class="sidebar-top">
+
+        <div class="logo">
+
+            <div class="logo-circle">
+
+                VVC
+
+            </div>
+
+            <div>
+
+                <h2>
+
+                    Vidya Vision
+
+                </h2>
+
+                <p>
+
+                    Teacher Portal
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <nav>
+
+        <ul>
+
+            <li>
+
+                <a href="dashboard.html">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="students.html">
+
+                    <i class="fa-solid fa-user-graduate"></i>
+
+                    <span>Students</span>
+
+                </a>
+
+            </li>
+
+            <li class="active">
+
+                <a href="attendance.html">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                    <span>Attendance</span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <i class="fa-solid fa-book-open"></i>
+
+                <span>Notes</span>
+
+            </li>
+
+            <li>
+
+                <i class="fa-solid fa-file-pen"></i>
+
+                <span>Tests</span>
+
+            </li>
+
+            <li>
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <span>Results</span>
+
+            </li>
+
+            <li>
+
+                <i class="fa-solid fa-users"></i>
+
+                <span>Parents</span>
+
+            </li>
+
+            <li>
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>Settings</span>
+
+            </li>
+
+        </ul>
+
+    </nav>
+
+</aside>
+
+<!-- ==========================================
+            MAIN CONTENT
+=========================================== -->
+
+<main class="main-content">
+
+<!-- ==========================================
+            TOP BAR
+=========================================== -->
+
+<header class="topbar">
+
+    <div>
+
+        <h1>
+
+            Attendance Management
+
+        </h1>
+
+        <p>
+
+            Mark and manage daily student attendance.
+
+        </p>
+
+    </div>
+
+    <div class="topbar-right">
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="searchAttendance"
+                placeholder="Search Student...">
+
+        </div>
+
+        <button class="notification-btn">
+
+            <i class="fa-solid fa-bell"></i>
+
+        </button>
+
+        <div class="teacher-profile">
+
+            <div class="profile-image">
+
+                VVC
+
+            </div>
+
+            <div>
+
+                <h4>
+
+                    Himanshu Gupta
+
+                </h4>
+
+                <small>
+
+                    Founder
+
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- ==========================================
+            PAGE HEADER
+=========================================== -->
+
+<section class="attendance-header">
+
+    <div>
+
+        <h2>
+
+            Today's Attendance
+
+        </h2>
+
+        <p>
+
+            Mark attendance for all students.
+
+        </p>
+
+    </div>
+
+    <button id="saveAttendanceBtn">
+
+        <i class="fa-solid fa-floppy-disk"></i>
+
+        Save Attendance
+
+    </button>
+
+</section>
+
+<!-- ==========================================
+            SUMMARY CARDS
+=========================================== -->
+
+<section class="summary-grid">
+
+    <div class="summary-card">
+
+        <i class="fa-solid fa-users"></i>
+
+        <h2 id="totalStudents">
+
+            0
+
+        </h2>
+
+        <p>
+
+            Total Students
+
+        </p>
+
+    </div>
+
+    <div class="summary-card">
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <h2 id="presentCount">
+
+            0
+
+        </h2>
+
+        <p>
+
+            Present
+
+        </p>
+
+    </div>
+
+    <div class="summary-card">
+
+        <i class="fa-solid fa-circle-xmark"></i>
+
+        <h2 id="absentCount">
+
+            0
+
+        </h2>
+
+        <p>
+
+            Absent
+
+        </p>
+
+    </div>
+
+    <div class="summary-card">
+
+        <i class="fa-solid fa-chart-pie"></i>
+
+        <h2 id="attendancePercent">
+
+            0%
+
+        </h2>
+
+        <p>
+
+            Attendance
+
+        </p>
+
+    </div>
+
+</section>
+<!-- ==========================================
+            ATTENDANCE TABLE
+=========================================== -->
+
+<section class="attendance-section">
+
+    <div class="table-container">
+
+        <table id="attendanceTable">
+
+            <thead>
+
+                <tr>
+
+                    <th>Photo</th>
+
+                    <th>Roll No.</th>
+
+                    <th>Name</th>
+
+                    <th>Class</th>
+
+                    <th>Attendance</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="attendanceBody">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+            EMPTY STATE
+=========================================== -->
+
+<section class="empty-state" id="emptyState">
+
+    <div class="empty-icon">
+
+        <i class="fa-solid fa-user-graduate"></i>
+
+    </div>
+
+    <h2>
+
+        No Students Found
+
+    </h2>
+
+    <p>
+
+        Please add students from the Students Module first.
+
+    </p>
+
+    <a href="students.html">
+
+        <button class="go-students-btn">
+
+            <i class="fa-solid fa-user-plus"></i>
+
+            Go to Students
+
+        </button>
+
+    </a>
+
+</section>
+
+<!-- ==========================================
+            TODAY'S REPORT
+=========================================== -->
+
+<section class="report-section">
+
+    <h2>
+
+        Today's Attendance Report
+
+    </h2>
+
+    <div class="report-grid">
+
+        <div class="report-card">
+
+            <i class="fa-solid fa-calendar-day"></i>
+
+            <h3 id="todayDate">
+
+                Loading...
+
+            </h3>
+
+            <p>
+
+                Current Date
+
+            </p>
+
+        </div>
+
+        <div class="report-card">
+
+            <i class="fa-solid fa-clock"></i>
+
+            <h3 id="currentTime">
+
+                --:--
+
+            </h3>
+
+            <p>
+
+                Current Time
+
+            </p>
+
+        </div>
+
+        <div class="report-card">
+
+            <i class="fa-solid fa-award"></i>
+
+            <h3 id="bestAttendance">
+
+                0%
+
+            </h3>
+
+            <p>
+
+                Today's Attendance
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================
+            FOOTER
+=========================================== -->
+
+<footer class="footer">
+
+    <p>
+
+        © 2026 Vidya Vision Classes
+
+    </p>
+
+    <p>
+
+        Developed with ❤️ by <strong>Samraddh</strong>
+
+    </p>
+
+</footer>
+
+</main>
+
+</div>
+
+<!-- ==========================================
+            JAVASCRIPT
+=========================================== -->
+<script src="js/vvc-core.js"></script>
+<script src="js/attendance.js"></script>
+
+</body>
+
+</html>

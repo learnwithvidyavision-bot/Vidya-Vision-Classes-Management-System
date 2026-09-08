@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Vidya Vision Classes</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="css/login.css">
+
+</head>
+
+<body>
+
+<div class="login-container">
+
+    <div class="login-card">
+
+        <!-- HEADER -->
+
+        <div class="login-header">
+
+            <div class="logo-circle">
+
+                VVC
+
+            </div>
+
+            <h1>
+
+                Vidya Vision Classes
+
+            </h1>
+
+            <p>
+
+                Classes Management System
+
+            </p>
+
+        </div>
+
+        <!-- TITLE -->
+
+        <h2>
+
+            Welcome Back
+
+        </h2>
+
+        <!-- LOGIN FORM -->
+
+        <form id="loginForm"
+              autocomplete="on">
+
+            <!-- EMAIL -->
+
+            <div class="input-group">
+
+                <label for="username">
+
+                    Email Address
+
+                </label>
+
+                <input
+                    type="email"
+                    id="username"
+                    placeholder="Enter your email address"
+                    autocomplete="email"
+                    required>
+
+            </div>
+
+            <!-- PASSWORD -->
+
+            <div class="input-group">
+
+                <label for="password">
+
+                    Password
+
+                </label>
+
+                <div class="password-box">
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required>
+
+                    <button
+                        type="button"
+                        id="togglePassword"
+                        aria-label="Show Password">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- REMEMBER -->
+
+            <div class="remember-row">
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        id="remember">
+
+                    Remember Me
+
+                </label>
+
+            </div>
+
+            <!-- ERROR -->
+
+            <p id="errorMessage"></p>
+
+            <!-- LOGIN BUTTON -->
+
+            <button
+                type="submit"
+                id="loginBtn">
+
+                <i class="fa-solid fa-right-to-bracket"></i>
+
+                Login
+
+            </button>
+
+        </form>
+
+        <!-- SECURITY -->
+
+        <div class="security-info">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            Secure Login Powered by Firebase Authentication
+
+        </div>
+
+        <!-- FOOTER -->
+
+        <footer class="login-footer">
+
+            © <span id="year"></span>
+
+            Vidya Vision Classes
+
+            <br>
+
+            Version 2.0 • Cloud Edition
+
+        </footer>
+
+    </div>
+
+</div>
+
+<!-- LOGIN SCRIPT -->
+
+<script type="module"
+        src="js/login.js"></script>
+
+</body>
+
+</html>

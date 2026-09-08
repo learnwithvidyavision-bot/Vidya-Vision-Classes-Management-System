@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teacher Dashboard | Vidya Vision Classes</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+<body>
+
+<!-- ================= LOADER ================= -->
+
+<div id="loader">
+
+    <div class="loader-content">
+
+        <div class="loader-logo">
+            VVC
+        </div>
+
+        <h2>Loading Dashboard...</h2>
+
+        <p id="loaderTeacherName">
+            Please Wait
+        </p>
+
+        <div class="loader-bar">
+
+            <div class="loader-progress"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= DASHBOARD ================= -->
+
+<div class="dashboard">
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+
+        <div class="logo-circle">
+
+            VVC
+
+        </div>
+
+        <div>
+
+            <h2>Vidya Vision</h2>
+
+            <span>Teacher Portal</span>
+
+        </div>
+
+    </div>
+
+    <nav>
+
+        <ul>
+
+            <li class="active">
+
+                <a href="dashboard.html">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Dashboard
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="students.html">
+
+                    <i class="fa-solid fa-user-graduate"></i>
+
+                    Students
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="attendance.html">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                    Attendance
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="notes.html">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                    Notes
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="tests.html">
+
+                    <i class="fa-solid fa-file-lines"></i>
+
+                    Tests
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="results.html">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    Results
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="parents.html">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    Parents
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="settings.html">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    Settings
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </nav>
+
+</aside>
+
+<!-- ================= MAIN ================= -->
+
+<main class="main-content">
+
+<!-- ================= TOPBAR ================= -->
+
+<header class="topbar">
+
+    <div>
+
+        <h1>Dashboard</h1>
+
+        <p id="greeting">
+
+            Welcome Back
+
+        </p>
+
+    </div>
+
+    <div class="topbar-right">
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="Search Dashboard..."
+            >
+
+        </div>
+
+        <button id="notificationBtn" class="notification-btn">
+
+            <i class="fa-solid fa-bell"></i>
+
+            <span id="notificationBadge">
+
+                0
+
+            </span>
+
+        </button>
+
+        <div id="profileMenu" class="teacher-profile">
+
+            <div id="profileImage" class="profile-image">
+
+                VVC
+
+            </div>
+
+            <div>
+
+                <h4 id="teacherDisplayName">
+
+                    Loading...
+
+                </h4>
+
+                <small id="teacherDisplayRole">
+
+                    Teacher
+
+                </small>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-down"></i>
+
+        </div>
+
+        <div id="profileDropdown" class="profile-dropdown">
+
+            <button id="profileBtn">
+
+                <i class="fa-solid fa-user"></i>
+
+                My Profile
+
+            </button>
+
+            <button id="settingsBtn">
+
+                <i class="fa-solid fa-gear"></i>
+
+                Settings
+
+            </button>
+
+            <button id="logoutBtn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+<!-- ==========================================
+        DASHBOARD STATISTICS
+========================================== -->
+
+<section class="dashboard-cards">
+
+    <!-- Students -->
+
+    <div class="dashboard-card">
+
+        <div class="card-icon">
+
+            <i class="fa-solid fa-user-graduate"></i>
+
+        </div>
+
+        <div class="card-info">
+
+            <h2 id="studentCount">
+                0
+            </h2>
+
+            <p>Total Students</p>
+
+        </div>
+
+    </div>
+
+    <!-- Notes -->
+
+    <div class="dashboard-card">
+
+        <div class="card-icon">
+
+            <i class="fa-solid fa-book-open"></i>
+
+        </div>
+
+        <div class="card-info">
+
+            <h2 id="notesCount">
+                0
+            </h2>
+
+            <p>Study Notes</p>
+
+        </div>
+
+    </div>
+
+    <!-- Tests -->
+
+    <div class="dashboard-card">
+
+        <div class="card-icon">
+
+            <i class="fa-solid fa-file-lines"></i>
+
+        </div>
+
+        <div class="card-info">
+
+            <h2 id="testsCount">
+                0
+            </h2>
+
+            <p>Tests Conducted</p>
+
+        </div>
+
+    </div>
+
+    <!-- Highest Result -->
+
+    <div class="dashboard-card">
+
+        <div class="card-icon">
+
+            <i class="fa-solid fa-trophy"></i>
+
+        </div>
+
+        <div class="card-info">
+
+            <h2 id="highestResult">
+                0%
+            </h2>
+
+            <p>Highest Result</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+        QUICK ACTIONS
+========================================== -->
+
+<section class="quick-actions">
+
+    <div class="section-header">
+
+        <h2>
+
+            Quick Actions
+
+        </h2>
+
+    </div>
+
+    <div class="action-grid">
+
+        <!-- Add Student -->
+
+        <button
+            id="addStudentAction"
+            class="action-card"
+            type="button"
+        >
+
+            <div class="action-icon">
+
+                <i class="fa-solid fa-user-plus"></i>
+
+            </div>
+
+            <h3>
+
+                Add Student
+
+            </h3>
+
+            <p>
+
+                Register a new student
+
+            </p>
+
+        </button>
+
+        <!-- Attendance -->
+
+        <button
+            id="attendanceAction"
+            class="action-card"
+            type="button"
+        >
+
+            <div class="action-icon">
+
+                <i class="fa-solid fa-calendar-check"></i>
+
+            </div>
+
+            <h3>
+
+                Attendance
+
+            </h3>
+
+            <p>
+
+                Mark today's attendance
+
+            </p>
+
+        </button>
+
+        <!-- Upload Notes -->
+
+        <button
+            id="uploadNotesAction"
+            class="action-card"
+            type="button"
+        >
+
+            <div class="action-icon">
+
+                <i class="fa-solid fa-book"></i>
+
+            </div>
+
+            <h3>
+
+                Upload Notes
+
+            </h3>
+
+            <p>
+
+                Share study material
+
+            </p>
+
+        </button>
+
+        <!-- Tests -->
+
+        <button
+            id="createTestAction"
+            class="action-card"
+            type="button"
+        >
+
+            <div class="action-icon">
+
+                <i class="fa-solid fa-file-circle-plus"></i>
+
+            </div>
+
+            <h3>
+
+                Create Test
+
+            </h3>
+
+            <p>
+
+                Schedule a new test
+
+            </p>
+
+        </button>
+
+        <!-- Results -->
+
+        <button
+            id="resultsAction"
+            class="action-card"
+            type="button"
+        >
+
+            <div class="action-icon">
+
+                <i class="fa-solid fa-chart-column"></i>
+
+            </div>
+
+            <h3>
+
+                Results
+
+            </h3>
+
+            <p>
+
+                Upload student results
+
+            </p>
+
+        </button>
+
+        <!-- Parents -->
+
+        <button
+            id="parentsAction"
+            class="action-card"
+            type="button"
+        >
+
+            <div class="action-icon">
+
+                <i class="fa-solid fa-users"></i>
+
+            </div>
+
+            <h3>
+
+                Parents
+
+            </h3>
+
+            <p>
+
+                Parent information
+
+            </p>
+
+        </button>
+
+        <!-- Announcements -->
+
+        <button
+            id="announcementAction"
+            class="action-card"
+            type="button"
+        >
+
+            <div class="action-icon">
+
+                <i class="fa-solid fa-bullhorn"></i>
+
+            </div>
+
+            <h3>
+
+                Announcement
+
+            </h3>
+
+            <p>
+
+                Publish a notice
+
+            </p>
+
+        </button>
+
+        <!-- Settings -->
+
+        <button
+            id="settingsAction"
+            class="action-card"
+            type="button"
+        >
+
+            <div class="action-icon">
+
+                <i class="fa-solid fa-gear"></i>
+
+            </div>
+
+            <h3>
+
+                Settings
+
+            </h3>
+
+            <p>
+
+                Configure dashboard
+
+            </p>
+
+        </button>
+
+    </div>
+
+</section>
+<!-- ==========================================
+        MAIN DASHBOARD GRID
+========================================== -->
+
+<section class="dashboard-grid">
+
+    <!-- ======================================
+            RECENT ACTIVITY
+    ======================================= -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <h2>
+
+                Recent Activity
+
+            </h2>
+
+            <button
+                class="panel-action-btn"
+                id="refreshActivityBtn"
+                type="button"
+            >
+
+                <i class="fa-solid fa-rotate"></i>
+
+                Refresh
+
+            </button>
+
+        </div>
+
+        <div
+            class="activity-list"
+            id="activityList"
+        >
+
+            <!-- Loaded from Firebase -->
+
+            <div class="activity-item empty-activity">
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                <div>
+
+                    <h4>
+
+                        No Activity Yet
+
+                    </h4>
+
+                    <p>
+
+                        Recent activities will appear here.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ======================================
+            TODAY'S SCHEDULE
+    ======================================= -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <h2>
+
+                Today's Schedule
+
+            </h2>
+
+            <button
+                class="panel-action-btn"
+                id="addScheduleBtn"
+                type="button"
+            >
+
+                <i class="fa-solid fa-plus"></i>
+
+                Add
+
+            </button>
+
+        </div>
+
+        <div
+            class="schedule-list"
+            id="scheduleList"
+        >
+
+            <!-- Loaded from Firebase -->
+
+            <div class="schedule-item">
+
+                <strong>
+
+                    No Classes Scheduled
+
+                </strong>
+
+                <span>
+
+                    Your timetable will appear here.
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+        ANNOUNCEMENTS
+========================================== -->
+
+<section class="panel">
+
+    <div class="panel-header">
+
+        <h2>
+
+            Announcements
+
+        </h2>
+
+        <button
+            id="addAnnouncementBtn"
+            class="panel-action-btn"
+            type="button"
+        >
+
+            <i class="fa-solid fa-plus"></i>
+
+            Add Announcement
+
+        </button>
+
+    </div>
+
+    <div
+        class="announcement-list"
+        id="announcementList"
+    >
+
+        <!-- Loaded from Firebase -->
+
+        <div class="announcement-box empty-announcement">
+
+            <i class="fa-solid fa-bullhorn"></i>
+
+            <p>
+
+                No announcements available.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+        PENDING TASKS
+========================================== -->
+
+<section class="panel">
+
+    <div class="panel-header">
+
+        <h2>
+
+            Pending Tasks
+
+        </h2>
+
+        <button
+            id="addTaskBtn"
+            class="panel-action-btn"
+            type="button"
+        >
+
+            <i class="fa-solid fa-plus"></i>
+
+            Add Task
+
+        </button>
+
+    </div>
+
+    <ul
+        class="task-list"
+        id="taskList"
+    >
+
+        <!-- Loaded from Firebase -->
+
+        <li class="task-item empty-task">
+
+            <i class="fa-solid fa-list-check"></i>
+
+            <span>
+
+                No pending tasks.
+
+            </span>
+
+        </li>
+
+    </ul>
+
+</section>
+<!-- ==========================================
+        FOOTER
+========================================== -->
+
+<footer class="dashboard-footer">
+
+    <p>
+
+        © 2026 Vidya Vision Classes |
+        Teacher Management System
+
+    </p>
+
+    <p>
+
+        Designed & Developed by
+
+        <strong>
+
+            Samraddh
+
+        </strong>
+
+    </p>
+
+</footer>
+
+</main>
+
+</div>
+
+<!-- ==========================================
+        DASHBOARD SCRIPT
+========================================== -->
+
+<script type="module" src="js/dashboard.js"></script>
+
+</body>
+
+</html>

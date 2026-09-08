@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Results | Vidya Vision Classes</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/results.css">
+
+</head>
+
+<body>
+
+<div id="loader">
+    <div class="loader-box">
+        <div class="loader-logo">VVC</div>
+        <h1>Results Module</h1>
+        <h2>Loading...</h2>
+        <div class="loading-bar"><div class="loading-progress"></div></div>
+    </div>
+</div>
+
+<div class="dashboard">
+
+<aside class="sidebar">
+
+    <div class="sidebar-top">
+        <div class="logo">
+            <div class="logo-circle">VVC</div>
+            <div>
+                <h2>Vidya Vision</h2>
+                <p>Teacher Portal</p>
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="dashboard.html"><i class="fa-solid fa-house"></i><span>Dashboard</span></a></li>
+            <li><a href="students.html"><i class="fa-solid fa-user-graduate"></i><span>Students</span></a></li>
+            <li><a href="attendance.html"><i class="fa-solid fa-calendar-check"></i><span>Attendance</span></a></li>
+            <li><a href="notes.html"><i class="fa-solid fa-book-open"></i><span>Notes</span></a></li>
+            <li><a href="tests.html"><i class="fa-solid fa-file-pen"></i><span>Tests</span></a></li>
+            <li class="active"><a href="results.html"><i class="fa-solid fa-chart-line"></i><span>Results</span></a></li>
+            <li><a href="parents.html"><i class="fa-solid fa-users"></i><span>Parents</span></a></li>
+            <li><a href="settings.html"><i class="fa-solid fa-gear"></i><span>Settings</span></a></li>
+        </ul>
+    </nav>
+
+</aside>
+
+<main class="main-content">
+
+<header class="topbar">
+
+    <div>
+        <h1>Results</h1>
+        <p>Record and track student test results.</p>
+    </div>
+
+    <div class="topbar-right">
+
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="searchResults" placeholder="Search Results...">
+        </div>
+
+        <button class="notification-btn"><i class="fa-solid fa-bell"></i></button>
+
+        <div class="teacher-profile">
+            <div class="profile-image">VVC</div>
+            <div>
+                <h4>Himanshu Gupta</h4>
+                <small>Founder</small>
+            </div>
+        </div>
+
+    </div>
+
+</header>
+
+<section class="summary-grid">
+    <div class="summary-card">
+        <i class="fa-solid fa-file-circle-check"></i>
+        <h2 id="totalResults">0</h2>
+        <p>Results Recorded</p>
+    </div>
+    <div class="summary-card">
+        <i class="fa-solid fa-trophy"></i>
+        <h2 id="highestResult">0%</h2>
+        <p>Highest Result</p>
+    </div>
+    <div class="summary-card">
+        <i class="fa-solid fa-chart-simple"></i>
+        <h2 id="averageResult">0%</h2>
+        <p>Average Result</p>
+    </div>
+</section>
+
+<section class="results-header">
+    <div>
+        <h2>Student Results</h2>
+        <p>Add a result for any test.</p>
+    </div>
+    <button id="addResultBtn"><i class="fa-solid fa-plus"></i> Add Result</button>
+</section>
+
+<section class="table-container">
+    <table id="resultTable">
+        <thead>
+            <tr>
+                <th>Student</th>
+                <th>Class</th>
+                <th>Test Name</th>
+                <th>Marks Obtained</th>
+                <th>Total Marks</th>
+                <th>Percentage</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="resultBody"></tbody>
+    </table>
+</section>
+
+<section class="empty-state" id="emptyState">
+    <div class="empty-icon"><i class="fa-solid fa-chart-line"></i></div>
+    <h2>No Results Yet</h2>
+    <p>Click "Add Result" to record your first result. Make sure you've added students first.</p>
+</section>
+
+<div class="modal" id="resultModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Add Result</h2>
+            <button id="closeModal"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <form id="resultForm">
+            <div class="form-grid">
+
+                <div class="input-group">
+                    <label>Student</label>
+                    <select id="resultStudent" required></select>
+                </div>
+
+                <div class="input-group">
+                    <label>Test Name</label>
+                    <input type="text" id="resultTestName" placeholder="Unit Test 1" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Marks Obtained</label>
+                    <input type="number" id="marksObtained" placeholder="85" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Total Marks</label>
+                    <input type="number" id="totalMarks" placeholder="100" required>
+                </div>
+
+            </div>
+
+            <button type="submit" class="save-btn"><i class="fa-solid fa-floppy-disk"></i> Save Result</button>
+        </form>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>© 2026 Vidya Vision Classes</p>
+</footer>
+
+</main>
+
+</div>
+<script src="js/vvc-core.js"></script>
+<script src="js/results.js"></script>
+
+</body>
+
+</html>

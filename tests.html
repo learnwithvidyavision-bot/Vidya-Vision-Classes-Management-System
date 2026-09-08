@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tests | Vidya Vision Classes</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="css/tests.css">
+</head>
+
+<body>
+
+    <!-- ==========================================
+         LOADER
+    =========================================== -->
+
+    <div id="loader">
+
+        <div class="loader-box">
+
+            <div class="loader-logo">
+                VVC
+            </div>
+
+            <h3>Vidya Vision Classes</h3>
+
+            <p>Loading Tests...</p>
+
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================
+         DASHBOARD LAYOUT
+    =========================================== -->
+
+    <div class="dashboard">
+
+
+        <!-- ======================================
+             SIDEBAR
+        ======================================= -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-top">
+
+                <div class="logo">
+
+                    <div class="logo-circle">
+                        VVC
+                    </div>
+
+                    <div>
+                        <h2>Vidya Vision</h2>
+                        <p>Teacher Portal</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <nav>
+
+                <ul>
+
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fa-solid fa-house"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="students.html">
+                            <i class="fa-solid fa-user-graduate"></i>
+                            <span>Students</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="attendance.html">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            <span>Attendance</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="notes.html">
+                            <i class="fa-solid fa-book-open"></i>
+                            <span>Notes</span>
+                        </a>
+                    </li>
+
+                    <li class="active">
+                        <a href="tests.html">
+                            <i class="fa-solid fa-file-pen"></i>
+                            <span>Tests</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="results.html">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span>Results</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="parents.html">
+                            <i class="fa-solid fa-users"></i>
+                            <span>Parents</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="settings.html">
+                            <i class="fa-solid fa-gear"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- ======================================
+             MAIN CONTENT
+        ======================================= -->
+
+        <main class="main-content">
+
+
+            <!-- TOPBAR -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <h1>Tests</h1>
+
+                    <p>
+                        Create, manage and organize student tests.
+                    </p>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <button
+                        class="notification-btn"
+                        id="notificationBtn"
+                        title="Notifications"
+                    >
+                        <i class="fa-solid fa-bell"></i>
+                    </button>
+
+
+                    <div class="teacher-profile">
+
+                        <div class="profile-image" id="profileInitials">
+                            VVC
+                        </div>
+
+                        <div>
+
+                            <h4 id="teacherNameDisplay">
+                                Himanshu Gupta
+                            </h4>
+
+                            <small id="teacherRoleDisplay">
+                                Founder
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- ======================================
+                 TEST HEADER
+            ======================================= -->
+
+            <section class="tests-header">
+
+                <div>
+
+                    <h2>Test Management</h2>
+
+                    <p>
+                        Keep track of all your upcoming and completed tests.
+                    </p>
+
+                </div>
+
+                <button
+                    id="addTestBtn"
+                    class="add-test-btn"
+                >
+                    <i class="fa-solid fa-plus"></i>
+                    Add New Test
+                </button>
+
+            </section>
+
+
+            <!-- ======================================
+                 SUMMARY CARDS
+            ======================================= -->
+
+            <section class="summary-grid">
+
+
+                <div class="summary-card">
+
+                    <div>
+
+                        <h2 id="totalTests">
+                            0
+                        </h2>
+
+                        <p>Total Tests</p>
+
+                    </div>
+
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-file-pen"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div>
+
+                        <h2 id="upcomingTests">
+                            0
+                        </h2>
+
+                        <p>Upcoming Tests</p>
+
+                    </div>
+
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div>
+
+                        <h2 id="completedTests">
+                            0
+                        </h2>
+
+                        <p>Completed Tests</p>
+
+                    </div>
+
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div>
+
+                        <h2 id="totalMarks">
+                            0
+                        </h2>
+
+                        <p>Total Marks</p>
+
+                    </div>
+
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ======================================
+                 FILTERS
+            ======================================= -->
+
+            <section class="filter-section">
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="searchTests"
+                        placeholder="Search tests..."
+                    >
+
+                </div>
+
+
+                <select id="classFilter">
+
+                    <option value="all">
+                        All Classes
+                    </option>
+
+                    <option value="Class 9">
+                        Class 9
+                    </option>
+
+                    <option value="Class 10">
+                        Class 10
+                    </option>
+
+                    <option value="Class 11">
+                        Class 11
+                    </option>
+
+                    <option value="Class 12">
+                        Class 12
+                    </option>
+
+                </select>
+
+
+                <select id="statusFilter">
+
+                    <option value="all">
+                        All Status
+                    </option>
+
+                    <option value="Upcoming">
+                        Upcoming
+                    </option>
+
+                    <option value="Completed">
+                        Completed
+                    </option>
+
+                </select>
+
+            </section>
+
+
+            <!-- ======================================
+                 TEST TABLE
+            ======================================= -->
+
+            <section
+                class="table-container"
+                id="tableContainer"
+            >
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Test Name</th>
+
+                            <th>Subject</th>
+
+                            <th>Class</th>
+
+                            <th>Date</th>
+
+                            <th>Total Marks</th>
+
+                            <th>Status</th>
+
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="testBody">
+                    </tbody>
+
+                </table>
+
+            </section>
+
+
+            <!-- ======================================
+                 EMPTY STATE
+            ======================================= -->
+
+            <section
+                class="empty-state"
+                id="emptyState"
+            >
+
+                <div class="empty-icon">
+
+                    <i class="fa-solid fa-file-circle-plus"></i>
+
+                </div>
+
+                <h2>
+                    No Tests Found
+                </h2>
+
+                <p>
+                    Create your first test to start managing assessments.
+                </p>
+
+                <button
+                    id="emptyAddTestBtn"
+                    class="add-test-btn"
+                >
+                    <i class="fa-solid fa-plus"></i>
+                    Create Test
+                </button>
+
+            </section>
+
+
+            <!-- ======================================
+                 FOOTER
+            ======================================= -->
+
+            <footer class="footer">
+
+                <p>
+                    © 2026 Vidya Vision Classes. All Rights Reserved.
+                </p>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- ==========================================
+         ADD / EDIT TEST MODAL
+    =========================================== -->
+
+    <div
+        class="modal"
+        id="testModal"
+    >
+
+        <div class="modal-content">
+
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2 id="modalTitle">
+                        Add New Test
+                    </h2>
+
+                    <p>
+                        Enter test details below.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="closeModal"
+                    type="button"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+
+            <form id="testForm">
+
+
+                <div class="form-grid">
+
+
+                    <div class="input-group full">
+
+                        <label for="testName">
+                            Test Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="testName"
+                            placeholder="e.g. Mathematics Unit Test"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="testSubject">
+                            Subject
+                        </label>
+
+                        <input
+                            type="text"
+                            id="testSubject"
+                            placeholder="e.g. Mathematics"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="testClass">
+                            Class
+                        </label>
+
+                        <select
+                            id="testClass"
+                            required
+                        >
+
+                            <option value="">
+                                Select Class
+                            </option>
+
+                            <option value="Class 9">
+                                Class 9
+                            </option>
+
+                            <option value="Class 10">
+                                Class 10
+                            </option>
+
+                            <option value="Class 11">
+                                Class 11
+                            </option>
+
+                            <option value="Class 12">
+                                Class 12
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="testDate">
+                            Test Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="testDate"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="testMarks">
+                            Total Marks
+                        </label>
+
+                        <input
+                            type="number"
+                            id="testMarks"
+                            placeholder="100"
+                            min="1"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="input-group full">
+
+                        <label for="testDescription">
+                            Description
+                        </label>
+
+                        <textarea
+                            id="testDescription"
+                            placeholder="Optional test description..."
+                            rows="4"
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="save-btn"
+                >
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    <span id="saveButtonText">
+                        Save Test
+                    </span>
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/tests.js"></script>
+
+</body>
+
+</html>

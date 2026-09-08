@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Notes | Vidya Vision Classes</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/notes.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     LOADER
+===================================================== -->
+
+<div id="loader">
+
+    <div class="loader-box">
+
+        <div class="loader-logo">
+            VVC
+        </div>
+
+        <h1>
+            Notes Module
+        </h1>
+
+        <h2>
+            Loading...
+        </h2>
+
+        <div class="loading-bar">
+
+            <div class="loading-progress"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     DASHBOARD
+===================================================== -->
+
+<div class="dashboard">
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar">
+
+
+    <div class="sidebar-top">
+
+        <div class="logo">
+
+            <div class="logo-circle">
+                VVC
+            </div>
+
+            <div>
+
+                <h2>
+                    Vidya Vision
+                </h2>
+
+                <p>
+                    Teacher Portal
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <ul>
+
+
+            <li>
+
+                <a href="dashboard.html">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="students.html">
+
+                    <i class="fa-solid fa-user-graduate"></i>
+
+                    <span>
+                        Students
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="attendance.html">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                    <span>
+                        Attendance
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li class="active">
+
+                <a href="notes.html">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                    <span>
+                        Notes
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="tests.html">
+
+                    <i class="fa-solid fa-file-pen"></i>
+
+                    <span>
+                        Tests
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="results.html">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    <span>
+                        Results
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="parents.html">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <span>
+                        Parents
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="settings.html">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+            </li>
+
+
+        </ul>
+
+    </nav>
+
+
+</aside>
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<main class="main-content">
+
+
+<!-- =====================================================
+     TOPBAR
+===================================================== -->
+
+<header class="topbar">
+
+
+    <div>
+
+        <h1>
+            Notes
+        </h1>
+
+        <p>
+            Upload and manage class notes.
+        </p>
+
+    </div>
+
+
+    <div class="topbar-right">
+
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="searchNotes"
+                placeholder="Search Notes..."
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <button
+            class="notification-btn"
+            type="button"
+            title="Notifications"
+        >
+
+            <i class="fa-solid fa-bell"></i>
+
+        </button>
+
+
+        <div class="teacher-profile">
+
+            <div class="profile-image">
+                VVC
+            </div>
+
+            <div>
+
+                <h4 id="profileName">
+                    Himanshu Gupta
+                </h4>
+
+                <small id="profileRole">
+                    Founder
+                </small>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</header>
+
+
+<!-- =====================================================
+     NOTES HEADER
+===================================================== -->
+
+<section class="notes-header">
+
+
+    <div>
+
+        <h2>
+            Class Notes
+        </h2>
+
+        <p>
+            Add and manage notes for your students.
+        </p>
+
+    </div>
+
+
+    <button
+        id="addNoteBtn"
+        type="button"
+    >
+
+        <i class="fa-solid fa-plus"></i>
+
+        Add Note
+
+    </button>
+
+
+</section>
+
+
+<!-- =====================================================
+     SUMMARY
+===================================================== -->
+
+<section class="summary-grid">
+
+
+    <div class="summary-card">
+
+        <div>
+
+            <h3 id="totalNotes">
+                0
+            </h3>
+
+            <p>
+                Total Notes
+            </p>
+
+        </div>
+
+        <div class="summary-icon">
+
+            <i class="fa-solid fa-book-open"></i>
+
+        </div>
+
+    </div>
+
+
+    <div class="summary-card">
+
+        <div>
+
+            <h3 id="totalClasses">
+                0
+            </h3>
+
+            <p>
+                Classes
+            </p>
+
+        </div>
+
+        <div class="summary-icon">
+
+            <i class="fa-solid fa-school"></i>
+
+        </div>
+
+    </div>
+
+
+    <div class="summary-card">
+
+        <div>
+
+            <h3 id="totalSubjects">
+                0
+            </h3>
+
+            <p>
+                Subjects
+            </p>
+
+        </div>
+
+        <div class="summary-icon">
+
+            <i class="fa-solid fa-book"></i>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================================
+     FILTERS
+===================================================== -->
+
+<section class="notes-controls">
+
+
+    <div class="filter-group">
+
+
+        <select id="classFilter">
+
+            <option value="all">
+                All Classes
+            </option>
+
+        </select>
+
+
+        <select id="subjectFilter">
+
+            <option value="all">
+                All Subjects
+            </option>
+
+        </select>
+
+
+        <button
+            type="button"
+            id="clearFiltersBtn"
+            class="clear-filter-btn"
+        >
+
+            <i class="fa-solid fa-filter-circle-xmark"></i>
+
+            Clear Filters
+
+        </button>
+
+
+    </div>
+
+
+    <div class="result-count">
+
+        <span id="resultCount">
+            0 notes
+        </span>
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================================
+     NOTES GRID
+===================================================== -->
+
+<section
+    class="notes-grid"
+    id="notesGrid"
+></section>
+
+
+<!-- =====================================================
+     EMPTY STATE
+===================================================== -->
+
+<section
+    class="empty-state"
+    id="emptyState"
+>
+
+
+    <div class="empty-icon">
+
+        <i class="fa-solid fa-book-open"></i>
+
+    </div>
+
+
+    <h2>
+        No Notes Found
+    </h2>
+
+
+    <p id="emptyStateText">
+
+        Click "Add Note" to upload your first class note.
+
+    </p>
+
+
+</section>
+
+
+<!-- =====================================================
+     ADD / EDIT MODAL
+===================================================== -->
+
+<div
+    class="modal"
+    id="noteModal"
+>
+
+
+    <div class="modal-content">
+
+
+        <div class="modal-header">
+
+
+            <div>
+
+                <h2 id="modalTitle">
+                    Add Note
+                </h2>
+
+                <p>
+                    Add details about the class note.
+                </p>
+
+            </div>
+
+
+            <button
+                id="closeModal"
+                type="button"
+                title="Close"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+        </div>
+
+
+        <form id="noteForm">
+
+
+            <div class="form-grid">
+
+
+                <div class="input-group">
+
+                    <label for="noteTitle">
+                        Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="noteTitle"
+                        placeholder="Chapter 1 - Algebra"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="noteClass">
+                        Class
+                    </label>
+
+                    <input
+                        type="text"
+                        id="noteClass"
+                        placeholder="10"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="noteSubject">
+                        Subject
+                    </label>
+
+                    <input
+                        type="text"
+                        id="noteSubject"
+                        placeholder="Mathematics"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="noteLink">
+                        Note Link
+                    </label>
+
+                    <input
+                        type="url"
+                        id="noteLink"
+                        placeholder="https://..."
+                    >
+
+                </div>
+
+
+                <div class="input-group full">
+
+                    <label for="noteDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="noteDescription"
+                        placeholder="Short description of this note..."
+                        rows="4"
+                    ></textarea>
+
+                </div>
+
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="save-btn"
+                id="saveNoteBtn"
+            >
+
+                <i class="fa-solid fa-floppy-disk"></i>
+
+                Save Note
+
+            </button>
+
+
+        </form>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <p>
+        © 2026 Vidya Vision Classes
+    </p>
+
+</footer>
+
+
+</main>
+
+
+</div>
+
+
+<!-- =====================================================
+     SCRIPTS
+===================================================== -->
+
+<script src="js/vvc-core.js"></script>
+
+<script src="js/notes.js"></script>
+
+
+</body>
+
+</html>
